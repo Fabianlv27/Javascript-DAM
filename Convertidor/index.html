@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script src="./index.js"></script>
+
+    <style>
+      body{background-color: rgb(14, 13, 13);}
+        fieldset{
+            padding: 30px;
+            width: 50%;
+            margin: 20px auto;
+            border: solid 2px gold;
+            border-radius: 20px;
+             background-color: rgba(155, 153, 14, 0.76);
+            color: rgb(32, 30, 1);
+        }
+
+        legend{
+            width: 200px;
+            height: 10px;
+            padding: 20px;
+            border-radius: 30px;
+            border: solid 2px gold;
+            background-color: rgba(155, 153, 14, 0.753);
+            color: rgb(32, 30, 1);
+            backdrop-filter: blur(2px);
+        }
+
+        .grado input{
+            margin-left: 5px;
+        }
+
+        .number{
+            width: 100px;
+            height: 15px;
+        }
+        .action{height: 21px;}
+        .grado{width: 100%; display: flex;}
+
+        select{
+          height: 21px;
+          background-color: rgb(224, 201, 65);
+          border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+ 
+  <fieldset>
+    <legend>Personal Information</legend>
+    <div class="grado">
+       <label for="cent">Grados Centigrados:</label>
+    <input type="number" id="gc" name="cent" class="number" value="0" onchange="Incremento(this)"><br><br> 
+     <button class="action" id="rest" onclick="cambio(this,'gc','B')">+1</button>
+    <button class="action" id="rest" onclick="cambio(this,'gc','B')">-1</button>
+
+     <select name="" id="" onchange="cambio(this,'gc','S')">
+          <option value="0">0</option>
+           <option value="5">+5</option>
+            <option value="10">+10</option>
+             <option value="-5">-5</option>
+              <option value="-10">-10</option>
+        </select>
+    </div>
+
+       <div class="grado">
+       <label for="cent">Grados Fahrenheit:&nbsp&nbsp</label>
+    <input type="number" id="gf" name="fah" class="number" value="0" onchange="Incremento(this)"><br><br> 
+  <button class="action" id="rest" onclick="cambio(this,'gf','B')">+1</button>
+    <button class="action" id="rest" onclick="cambio(this,'gf','B')">-1</button>
+
+     <select name="" id="op" onchange="cambio(this,'gf','S')">
+          <option value="0">0</option>
+           <option value="5">+5</option>
+            <option value="10">+10</option>
+             <option value="-5">-5</option>
+              <option value="-10">-10</option>
+        </select>
+    </div>
+
+          <div class="grado">
+       <label for="cent">Grados Kelvin:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+    <input type="number" id="gk" name="kel" class="number" value="0" onchange="Incremento(this)"><br><br> 
+      <button class="action" id="rest" onclick="cambio(this,'gk','B')">+1</button>
+        <button class="action" id="rest" onclick="cambio(this,'gk','B')">-1</button>
+
+        <select name="" id="" onchange="cambio(this,'gk','S')">
+          <option value="0">0</option>
+           <option value="5">+5</option>
+            <option value="10">+10</option>
+             <option value="-5">-5</option>
+              <option value="-10">-10</option>
+        </select>
+    </div>
+
+  </fieldset>
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+
+    <style>
+        body{background-color: rgb(219, 219, 219);}
+        #content{
+            width: 200px;
+            height: 250px;
+            margin: 20px auto;
+            background-color: rgb(254, 187, 16);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.302);
+        }
+        .number{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            border: solid rgb(214, 163, 12);
+            box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.354);
+        }
+        .number,select{margin-bottom: 10px;}
+        select{
+            height: 25px;
+            background-color: rgb(214, 163, 12);
+           border: none;
+           border-radius: 5px;
+        }
+        #Calcular{
+            padding: 5px;
+            height: 25px;
+            background-color: rgb(214, 163, 12);
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+        }
+        #resultado{
+            padding: 5px;
+            background-color: rgba(255, 253, 253, 0.726);
+            color: rgb(65, 50, 3);
+
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <input type="number" value="0" name="" id="n1"  class="number" onchange="Calcular()">
+
+        <select name="" id="operaciones" onchange="Calcular()">
+            <option value="S">+</option>
+            <option value="R">-</option>
+            <option value="M">*</option>
+            <option value="D">/</option>
+        </select>
+
+        <input type="number" value="0" name="" id="n2" class="number" onchange="Calcular()">
+
+        <p id="resultado">Resultado: </p>
+    </div>
+</body>
+</html>
