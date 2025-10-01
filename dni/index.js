@@ -31,3 +31,5 @@ function CalcularLetra() {
     }
 
 }
+
+//validar formulario en: caja de numero entero text,select:binario,octal,hexadecimal.

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="cargar()">
+    <div id="cont">
+        <label for="">Año</label>
+        <select name="año" id="año"  onchange="CalcularDias()"></select>
+
+        <label for="">Meses</label>
+        <select name="meses" id="meses"  onchange="CalcularDias()"></select>
+
+        <p id="dias"></p>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

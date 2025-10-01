@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: -webkit-linear-gradient(90deg, #ffd700, #ff8c00, #ff4500);
+            background: linear-gradient(90deg, #ffd700, #ff8c00, #ff4500);
+        }
+
+        #cont {
+            margin: 20px auto;
+            height: auto;
+            width: 200px;
+        }
+
+        #num {
+            height: 29px;
+            background-color: rgba(0, 0, 0, 0.246);
+            border: none;
+            border-bottom: solid rgba(255, 255, 255, 0.789);
+            color: whitesmoke;
+        }
+
+        #bases {
+            background-color: rgba(255, 255, 255, 0.656);
+            border: none;
+        }
+
+        #bases option {
+            background-color: rgba(255, 255, 255, 0.656);
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+        <input type="text" value="20" class="num" id="num" onchange="Calcular()">
+         <p id="resultado"></p>
+        <select name="bases" id="bases" onchange="Calcular()">
+            <option value="2">Binarios</option>
+            <option value="8">Octal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+       
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
