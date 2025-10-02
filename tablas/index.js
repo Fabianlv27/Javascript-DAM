@@ -31,3 +31,5 @@ for (let index = 2; index <= 10; index++) {
 }
 
 //con un año y mes el calendario
+
+//forulario input date que ponga en una caja el horoscopo que pertenece. dar el zodiaco con imagenes

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #444;
+    }
+
+    input[type="date"] {
+      font-size: 18px;
+      padding: 10px;
+      border: 3px solid #ff69b4;
+      border-radius: 15px;
+      outline: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #fff0f5;
+      cursor: pointer;
+    }
+
+    input[type="date"]:hover {
+      transform: scale(1.1) rotate(-3deg);
+      box-shadow: 0 0 20px #ff69b4;
+    }
+
+    #iZodiaco {
+      margin-top: 30px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px dashed #ff1493;
+      padding: 10px;
+      background: #fff;
+      animation: flotando 3s ease-in-out infinite;
+    }
+
+    #tZodiaco {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff4500;
+      animation: textoBrinca 1s infinite;
+    }
+
+    /* Animaciones */
+    @keyframes flotando {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-10px) rotate(5deg); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes textoBrinca {
+      0%, 100% { transform: scale(1); color: #ff4500; }
+      50% { transform: scale(1.2) rotate(-3deg); color: #00bfff; }
+    }
+
+    @keyframes saltar {
+      0% { transform: scale(1); }
+      30% { transform: scale(1.4) rotate(10deg); }
+      50% { transform: scale(0.8) rotate(-10deg); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+</head>
+
+<body>
+    <input type="date" name="fecha" id="fecha" onchange="Cambio()">
+    <img src="" alt="" id="iZodiaco">
+    <p id="tZodiaco"></p>
+</body>
+<script src="index.js"></script>
+</html>

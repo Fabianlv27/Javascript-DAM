@@ -1,10 +1,3 @@
-let meses= ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-
-//divisible entre 4 && no son divisibles entre 100 || son divisibles con 400
-for (let i = 0; i < meses.length; i++) {
-   print(meses[i])
-    
-}
 
 function is_bisiesto() {
     const year=parseInt(document.getElementById("year").value) 

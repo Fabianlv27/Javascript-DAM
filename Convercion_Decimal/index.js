@@ -5,41 +5,24 @@ function Verificador(number, base) {
     let c_valido
     switch (base) {
         case 2:
-             c_valido='01'
-            for (let i = 0; i < number.length; i++) {
-                if (!c_valido.includes(number[i])) {
-                    valido = false
-                    return
-                }
-
-            }
+            c_valido = '01'
             break;
         case 8:
-            c_valido='01234567'
-            for (let i = 0; i < number.length; i++) {
-                if (!c_valido.includes(number[i])) {
-                    valido = false
-                    return
-                }
-
-            }
+            c_valido = '01234567'
             break;
         case 16:
-            const cadenaHexadecimal = "123456789ABCDEF"
-            for (let i = 0; i < number.length; i++) {
-                if (!cadenaHexadecimal.includes(number[i])) {
-                    valido = false
-                    return
-                } else {
-                    number = cadenaHexadecimal[i] + number.slice(i)
-                }
-
-            }
+            c_valido = "123456789ABCDEF"
             break;
-
-
         default:
             break;
+    }
+
+    for (let i = 0; i < number.length; i++) {
+        if (!c_valido.includes(number[i])) {
+            valido = false
+            return
+        }
+
     }
     return valido
 }
@@ -55,12 +38,12 @@ function Calcular() {
         document.getElementById("resultado").innerHTML = "Numero invalido"
         return
     }
-    let acumulador=0
-    let exp=0
-    for (let i = number.length-1; i >= 0; i--) {
+    let acumulador = 0
+    let exp = 0
+    for (let i = number.length - 1; i >= 0; i--) {
         console.log(parseInt(number[i]));
-        console.log( Math.pow(base,exp));
-        acumulador += parseInt(number[i]) * Math.pow(base,exp)
+        console.log(Math.pow(base, exp));
+        acumulador += parseInt(number[i]) * Math.pow(base, exp)
         exp++
     }
 
