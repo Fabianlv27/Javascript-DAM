@@ -38,20 +38,20 @@ body {
     font-size: 1rem;
 }
 
-#semana {
+.semana {
     font-size: 1.2rem;
     margin: 1rem 0;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-#calendario {
+.calendario {
     border-collapse: collapse;
     width: 100%;
-    margin-top: 1rem;
+    margin: 1rem;
 }
 
-#calendario td {
+.calendario td {
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1rem;
@@ -61,11 +61,11 @@ body {
     cursor: pointer;
 }
 
-#calendario td:hover {
+.calendario td:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
 }
-#sem{
+.sem{
     font-weight: bolder;
     background-color: rgba(12, 12, 12, 0.594);
 }
@@ -76,20 +76,38 @@ body {
 
 <body>
     <div id="cont">
-        <input type="date" name="" id="fecha" onchange="Calcular()">
-        <p id="semana"></p>
-        <table id="calendario">
-            <tr id="sem">
-                <td>l</td>
-                <td>m</td>
-                <td>x</td>
-                <td>j</td>
-                <td>v</td>
-                <td>s</td>
-                <td>d</td>
-            </tr>
+        <select name="" id="fecha">
+            <option value="2025">2025</option>
+        </select>
+        <div id="Calendarios">
+             <table id="calendario0" class="calendario">
 
+             <table id="calendario1" class="calendario">
         </table>
+                     <table id="calendario2" class="calendario">
+        </table>
+                     <table id="calendario3" class="calendario">
+        </table>
+                     <table id="calendario4" class="calendario">
+        </table>
+                     <table id="calendario5" class="calendario">
+        </table>
+                     <table id="calendario6" class="calendario">
+        </table>
+
+                  <table id="calendario7" class="calendario">
+        </table>
+                     <table id="calendario8" class="calendario">
+        </table>
+                     <table id="calendario9" class="calendario">
+        </table>
+                     <table id="calendario10" class="calendario">
+        </table>
+                     <table id="calendario11" class="calendario">
+        </table>
+        </table>
+        </div>
+       
     </div>
 </body>
 

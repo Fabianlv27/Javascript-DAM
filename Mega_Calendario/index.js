@@ -7,22 +7,21 @@ let semana
 function Manejador_de_fechas(date) {
     console.log(date);
     año = date.getFullYear()
-    console.log(año);
-    mes = date.getMonth()+1
-    console.log(mes);
+    mes = date.getMonth()
     dia = date.getDate()
     semana = date.getDay()
     semana= semana==0?7:semana
-    console.log(semana);
 }
 
 function Cargar() {
-    let hoy = new Date()
-    Manejador_de_fechas(hoy)
-    cadena = año + "-" + (mes < 10 ? "0" + mes : mes) + "-" + (dia < 10 ? "0" + dia : dia)
-    console.log(cadena);
-    document.getElementById("fecha").value = cadena
-    Calcular()
+  const year=document.getElementById("fecha").value
+   const date=new Date(year,0,1)
+   Manejador_de_fechas(date)
+   
+  for (let i = 0; i <= 11; i++) {
+    Calcular(year,i,1)
+  }
+    
 
 }
 function is_bisiesto(year) {
@@ -65,15 +64,15 @@ function CalcularDias() {
     return dias
 }
 
+function Calcular(a,m,d) {
 
-function Calcular() {
-
-    const tabla = document.getElementById("calendario")
-    const dias = CalcularDias()
-    const input=document.getElementById("fecha").value.split("-")
-    console.log(input);
-    const date=new Date(input[0],parseInt(input[1])-1 ,input[2])
+    const tabla = document.getElementById("calendario"+m.toString())
+    
+    console.log(a,m,d);
+    const date=new Date(a,parseInt(m),d)
+    console.log(date);
     Manejador_de_fechas(date)
+    const dias = CalcularDias()
     console.log(dias);
     tabla.innerHTML=`<tr id="sem">
                 <td>l</td>
