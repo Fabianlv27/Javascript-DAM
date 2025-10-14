@@ -6,7 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+/* === ESTILO MINIMALISTA === */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+    background-color: #f5f6fa;
+    color: #2f3640;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cont {
+    background: white;
+    border: 1px solid #dcdde1;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 380px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #273c75;
+    margin-bottom: 1rem;
+}
+
+div > p {
+    font-size: 0.9rem;
+    color: #353b48;
+    margin-bottom: 0.3rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+    accent-color: #0097e6;
+    margin-bottom: 0.4rem;
+}
+
+select {
+    width: 100%;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    padding: 0.3rem;
+    background-color: #f5f6fa;
+    color: #2f3640;
+    font-size: 0.85rem;
+    outline: none;
+    transition: 0.2s;
+}
+
+select:hover,
+select:focus {
+    border-color: #0097e6;
+}
+
+#cuadro {
+    height: 100px;
+    width: 40%;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    background-color: #dcdde1;
+    transition: 0.3s;
+}
+
+#CValores {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #718093;
+}
+
+
+</style>
 <body>
     <div id="cont">
         <fieldset>
@@ -15,31 +101,33 @@
             </legend>
             <div>
                 <p>Rojo</p>
-                <input type="range" name="" id="r">
-                <select name="" id="sr"></select>
+                <input type="range" name="" min="0" max="255" id="r" value="0" class="changer">
+                <select name="" class="SChanger" value="0" id="sr"></select>
             </div>
             <div>
                 <p>Verde</p>
-                <input type="range" name="" id="r">
-                <select name="" id="sr"></select>
+                <input type="range" name=""  min="0" max="255" id="g" value="0" class="changer">
+                <select name="" class="SChanger" value="0" id="sg"></select>
             </div>
             <div>
                 <p>Azul</p>
-                <input type="range" name="" id="r">
-                <select name="" id="sr"></select>
+                <input type="range" name=""  min="0" max="255"id="b" value="0" class="changer">
+                <select name="" class="SChanger" value="0" id="sb"></select>
             </div>
             <div>
                 <p>Opacidad</p>
-                <input type="range" name="" id="r">
-                <select name="" id="sr"></select>
+                <input type="range" name="" min="0" max="10" value="10" id="o" class="changer">
+                <select name="" class="SChanger" value="0" id="so"></select>
             </div>
             <div>
                 <p>Ancho</p>
-                <input type="range" name="" id="r">
-                <select name="" id="sr"></select>
+                <input type="range" name="" id="a" min="10" max="100" value="10" step="10" class="changer">
+                <select name="" class="SChanger" value="0" id="sa"></select>
             </div>
         </fieldset>
+        <div id="cuadro"></div>
+        <p id="CValores">Color:rgba(0,0,0,1)</p>
     </div>
 </body>
-
+<script src="index.js"></script>
 </html>

@@ -34,7 +34,7 @@ function is_bisiesto(year) {
 function CalcularDias() {
     let dias
     console.log(mes);
-    switch (parseInt(mes)) {
+    switch (parseInt(mes)+1) {
         case 1:
         case 3:
         case 5:
