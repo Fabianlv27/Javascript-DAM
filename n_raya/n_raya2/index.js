@@ -8,6 +8,7 @@ let tb
 let fin=false
 
 function cargar() {
+    reiniciarJuego()
     const n = parseInt(prompt("Ingrese de que tamaño sera"))
     let matriz = GenerarMatriz(n)
     GenerarElementos(matriz, n)
@@ -59,18 +60,27 @@ function Comprobar() {
         if (turno) {
 
            if (tb.some(sub=>sub.every(e=>player1.includes(e)))) {
-            alert("jugador 1 ha ganado")
+            mostrarAnimacionGanador(1)
             fin=true
-
+            
         } 
         }else{
               if (tb.some(sub=>sub.every(e=>player2.includes(e)))) {
-            alert("jugador 2 ha ganado")
+            mostrarAnimacionGanador(2)
             fin=true
         } 
         }
+ 
      
     
+}
+
+function reiniciarJuego() {
+    player1 = []
+    player2 = []
+    turno = true
+    fin = false
+    PlayerDiv.innerText = "Turno del jugador 1"
 }
 
 function Manejador_Imagenes(e) {
@@ -84,6 +94,7 @@ function Manejador_Imagenes(e) {
         e.src="./x.png"
         PlayerDiv.innerText="Turno del jugador 1"
     }
+    e.removeEventListener("click",e.handlerRef)
     console.log("se ha seleccionado el: "+e.id);
 
     Comprobar()
@@ -97,7 +108,7 @@ function GenerarElementos(matriz, n) {
         cadena += "<tr>"
         for (let j = 0; j < matriz[i].length; j++) {
             const id = ((n * i) + (j + 1)).toString()
-            cadena += "<td><img id=" + id + " src='./logo.png' class='cards'/></td>"
+            cadena += "<td><img id=" + id + " src='./logo.png' width='80%' height='80%' class='cards'/></td>"
 
         }
         cadena += "</tr>"
@@ -105,27 +116,32 @@ function GenerarElementos(matriz, n) {
     }
     cadena += "</table>"
     marco.innerHTML = cadena
-
     const cartas= document.getElementsByClassName("cards")
-    console.log(cartas);
+    console.log(cartas)
     for (let i = 0; i < cartas.length; i++) { 
-            cartas[i].addEventListener("click",()=>Manejador_Imagenes(cartas[i]))
+            const handler = () => Manejador_Imagenes(cartas[i])
+    cartas[i].addEventListener("click", handler)
+    cartas[i].handlerRef = handler
     }
 
 }
 
+function mostrarAnimacionGanador(jugador) {
+    const cont = document.getElementById("cont");
 
-function dime() {
-    let cadena = "<table align='center' border=1>"
-    for (let i = 0; i < tb.length; i++) {
-        cadena += "<tr>"
-        for (let j = 0; j < tb[i].length; j++) {
-            cadena += "<td>" + tb[i][j] + "</td>";
+    // Fondo parpadeante
+    cont.style.animation = "winFlash 0.4s alternate 4";
 
-        }
-        cadena += "</tr>"
-
+    // Crear confeti
+    for (let i = 0; i < 60; i++) {
+        const confeti = document.createElement("div");
+        confeti.classList.add("confeti");
+        confeti.style.left = Math.random() * 100 + "vw";
+        confeti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+        confeti.style.animationDuration = (Math.random() * 2 + 2) + "s";
+        cont.appendChild(confeti);
+        setTimeout(() => confeti.remove(), 2500);
     }
-    cadena += "</table>"
-    return cadena
+
+    PlayerDiv.innerText = `🎉 ¡Jugador ${jugador} gana! 🎉`
 }
