@@ -6,11 +6,161 @@
     <title>Document</title>
 </head>
 <style>
-    .amarillo{
-        background-color: yellow;
+    body {
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      margin: 0;
     }
+
+    /* Título elegante */
+    h1 {
+      font-size: 2rem;
+      color: #93c5fd;
+      letter-spacing: 1px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(147,197,253,0.2);
+    }
+
+    /* Contenedor tipo vidrio */
+    table {
+      border-collapse: collapse;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px) saturate(150%);
+      -webkit-backdrop-filter: blur(16px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    table:hover {
+      box-shadow: 0 12px 40px rgba(30, 64, 175, 0.4);
+      transform: translateY(-3px);
+    }
+
+    th, td {
+      padding: 14px 22px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      transition: 0.5s;
+    }
+
+    th {
+      font-weight: 500;
+      color: #a5b4fc;
+      background: rgba(255,255,255,0.05);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    input[type="number"] {
+      width: 90px;
+      padding: 6px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      text-align: right;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: #60a5fa;
+      background: rgba(96, 165, 250, 0.1);
+      box-shadow: 0 0 8px rgba(96,165,250,0.3);
+    }
+
+    .amarillo {
+      background: rgba(14, 163, 193, 0.2) !important;
+      color: #ddf3f9;
+      font-weight: 600;
+    }
+    .celeste{
+        background: rgb(6, 22, 44);
+        box-shadow: inset 0px 0px 10px #0f172a57 ;
+    }
+
+    img {
+      width: 32px;
+      height: 22px;
+      border-radius: 3px;
+      filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: rgba(226,232,240,0.6);
+    }
+
+    footer span {
+      color: #93c5fd;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, table {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    #Equivalencias{
+        width: auto;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #223d69;
+        border-radius: 10px;
+
+    }
+    .Eq{
+        padding: 0.6rem 1rem;
+        height: auto;
+        width: auto;
+        gap:4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #60a5fa48;
+        border: solid 1px #ffffff4d;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+    .Eq h3 {
+  flex: 1;
+  margin: 0;
+  text-align: left;
+}
+.Eq button{
+    background-color: #0f172ac3;
+    border: none;
+    color: #93c5fd;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 </style>
 <body>
+     <h1>💱 Conversor de Monedas</h1>
     <table align='center' border=1 id="tabla_monedas">
         <tr>
             <td></td>
@@ -28,6 +178,42 @@
         </tr>
 
     </table>
+    <div id="Equivalencias">
+
+        <div class="Eq">
+            <h3>Dolar</h3>
+            <button class="sumar" onclick="sumar(this.innerHTML,'E0')">+1</button>
+            <input id="E0" type="number" onchange="Cequivalencia(this)" value="0"/>$
+            <button class="sumar"  onclick="sumar(this.innerHTML,'E0')" >-1</button>
+         <select name="" id="" class="cantidad">
+</select>
+        </div> 
+               <div class="Eq">
+            <h3>Euro </h3>
+            <button class="sumar"  onclick="sumar(this.innerHTML,'E1')">+1</button>
+            <input id="E1" type="number" onchange="Cequivalencia(this)"value="0"/>€
+            <button class="sumar"  onclick="sumar(this.innerHTML,'E1')">-1</button>
+         <select name="" id="" class="cantidad">
+</select>
+        </div> 
+               <div class="Eq">
+            <h3>Yen</h3>
+            <button class="sumar"  onclick="sumar(this.innerHTML,'E2')">+1</button>
+            <input id="E2" type="number" onchange="Cequivalencia(this)" value="0"/>¥
+            <button class="sumar"  onclick="sumar(this.innerHTML,'E2')">-1</button>
+         <select name="" id="" class="cantidad">
+</select>
+        </div> 
+               <div class="Eq">
+            <h3>Libra</h3>
+            <button class="sumar"  onclick="sumar(this,'E3')">+1</button>
+            <input id="E3" onchange="Cequivalencia(this)" type="number" value="0"/>£
+            <button class="sumar"  onclick="sumar(this,'E3')">-1</button>
+         <select name="" id="" class="cantidad">
+</select>
+        </div> 
+
+    </div>
 </body>
 <script src="index.js"></script>
 </html>
