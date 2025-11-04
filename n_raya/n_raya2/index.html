@@ -4,6 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1d3557, #457b9d);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f1faee;
+  overflow: hidden;
+}
+
+#cont {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 25px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+#marco {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  max-width: 80vmin;
+  max-height: 80vmin;
+  gap: 5px;
+}
+
+#marco img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: #f1faee;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+   display: block;           /* <--- evita espacios fantasmas */
+  box-sizing: border-box;   /* <--- asegura medidas constantes */
+  padding: 10%; 
+}
+
+#marco img:hover {
+  transform: scale(1.05);
+  background-color: #a8dadc;
+}
+
+#btnCargar {
+  background-color: #e63946;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.15s;
+  margin-top: 10px;
+}
+
+#btnCargar:hover {
+  background-color: #ff5c73;
+  transform: scale(1.05);
+}
+
+
+#playerDiv {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+td,tr{
+  border: none;
+}
+@keyframes confetiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.confeti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  opacity: 0.9;
+  animation: confetiFall linear forwards;
+  z-index: 9999;
+}
+
+@keyframes winFlash {
+  0% { background: linear-gradient(135deg, #1d3557, #457b9d); }
+  100% { background: linear-gradient(135deg, #43a047, #8bc34a); }
+}
+
+    </style>
 </head>
 
 <body>
