@@ -64,9 +64,8 @@ console.log(elemento.value,id_origen);
     const moneditas=ContEquivalencias.getElementsByTagName("input")
 
     for (let i = 0; i < moneditas.length; i++) {
-        temp_elemento=document.getElementById(moneditas[i].id)
          moneditas[i].value=(conversion[i]/conversion[id_origen])*valor.toFixed(6)
-         temp_elemento.className=""
+         moneditas[i].className=""
 
     }
     elemento.className="celeste"

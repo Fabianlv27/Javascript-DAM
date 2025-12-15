@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    fieldset {
+        width: 300px;
+        margin: auto;
+        margin-top: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        background-color: rgb(0, 255, 213);
+    }
+
+    legend {
+        background-color: aquamarine;
+        padding: 5px;
+        border-radius: 10px;
+        border: solid black 2px;
+        font-weight: bold;
+        font-size: 15px;
+
+    }
+
+    input,
+    select {
+        font-size: 15px;
+        margin: 5px;
+        width: 100px;
+    }
+
+    select {
+        width: 108px;
+    }
+
+    #main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend>
+            Conversor de unidades
+        </legend>
+
+        <section id="main">
+            <select name="unidades" id="unidades">
+                <option value="0_1">longitud</option>
+                <option value="1_1">masa</option>
+                <option value="2_1">capacidad</option>
+                <option value="3_2">superficie</option>
+                <option value="4_3">volumen</option>
+            </select>
+            <div>
+                <div>
+                    <input type="number" name="valor1" id="valor1" value="1" onchange="convertir">
+                    =
+                    <input type="number" value="1" name="valor2" id="valor2" disabled>
+
+                </div>
+                <div>
+                    <select name="medida1" id="medida1"></select>
+                    ➡️
+                    <select name="medida2" id="medida2">
+                    </select>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </fieldset>
+
+</body>
+<script src="index.js"></script>
+
+</html>

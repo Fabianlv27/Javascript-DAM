@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #marco1990{
+        width:500px;
+        height:200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        border:solid black 2px;
+        margin:auto;
+        margin-top:20px;
+        background-size:cover;
+    }
+    fieldset{
+        width:300px;
+        margin:auto;
+        margin-top:20px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:20px;
+        background-color:rgb(0, 255, 213);
+    }
+    legend{
+        background-color:aquamarine;
+        padding:5px;
+        border-radius:10px;
+        border: solid black 2px;
+        font-weight:bold;
+        font-size:15px;
+
+    }
+    select{
+        font-size:15px;
+        margin:5px;
+        width:150px;
+    }
+    .focus{
+        font-weight:bold;
+        background-color:yellow;
+        border: solid black 2px;
+    }
+</style>
+</head>
+<body onload="cargar()">
+    <div id="marco1990"></div>
+
+        <fieldset>
+            <legend id="comunidad"></legend>
+            <p><select name="" id="sprovincias" onchange="cambio_prov(this)"></select></p>
+        </fieldset>
+    
+</body>
+<script src="index.js"></script>
+</html>

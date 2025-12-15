@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body >
+    <h1>Conversor de Temperaturas</h1>
+    <div id="cont">
+        <div>
+            <label for="Medida" id="medida">
+            </label>
+            <input type="number" name="temperatura" id="temp" value="2">
+            <button id="convertir" onclick="Convertir()">Convertir</button>
+        </div>
+        <p id="resultado"></p>
+        <label for="opciones">Opciones</label>
+        <div>
+        
+        <input type="radio" name="opt" id="FC" checked>  
+        F a C
+       
+        <input type="radio" name="opt" id="CF">
+         C a F
+                
+        <input type="radio" name="opt" id="CK">
+        C a K
+                
+        <input type="radio" name="opt" id="KC">
+        K a C
+                
+        <input type="radio" name="opt" id="FK">
+        F a K
+                
+        <input type="radio" name="opt" id="KF">
+        K a F
+        </div>
+
+    </div>
+
+</body>
+<script src="index.js"></script>
+</html>
