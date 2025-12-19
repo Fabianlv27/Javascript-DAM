@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .g{background-color: greenyellow;}
+    .v{background-color: violet;}
+    .r{background-color: red;}
+    .y{background-color: yellow;}
+    .c{background-color: skyblue;}
+    .b{background-color: brown;}
+
+    .color_div{height: 50px;width: 50px;border-radius: 50%s;}
+
+    #intentos{
+        height: auto;
+        width: 200px;
+        padding: 5px;
+        background-color: antiquewhite;
+    }
+    .intento_div{
+        width: 100%;
+        display: flex;
+    }
+    .intento_solo_div{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: rgb(229, 169, 92);
+    }
+    #pistas{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    #i_pistas{
+        width: 100%;
+        display: flex;
+    }
+    .pista_div{
+        padding-top: 2px;
+        height: 48px;
+        width: 10px;
+        padding: 2px;
+        display: flex;
+        flex-direction: column;
+        background-color:antiquewhite ;
+    }
+    .pista_solo_div{
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color:rgb(229, 169, 92) ;
+    }
+</style>
+<body onload="cargar()">
+    <div id="cont">
+        <p>
+           <h1>MASTERMIND</h1> 
+           <button>Reset</button>
+        </p>
+        <div>
+          <div id="solucion"></div>
+        <div id="i_pistas">
+          <div id="intentos"></div>
+          <div id="pistas"></div>
+        </div>  
+        </div>
+        
+        <div id="colores"></div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
